@@ -10,7 +10,7 @@ const Stories = () => {
     const [search, setSearch] = useState('')
     const [{ themeBody, themeInput, isDark }, toggleTheme] = useContext(ThemeContext);
     
-    const {data: stories, isPending, error} = useFetch(`https://my-json-server.typicode.com/oooomair/hiddendb/stories?q=${search}`)
+    const {data: stories, isPending, error} = useFetch('/api/stories')
 
     const changeSearch = (searchValue) => {
         setSearch(searchValue)
