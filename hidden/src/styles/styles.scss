@@ -1,0 +1,431 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: lighter;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+}
+
+.App {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: rgb(140, 140, 140);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(80, 80, 80);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(120, 120, 120);
+}
+
+// mixins
+
+@mixin underline-lr {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #548cff;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover::after {
+    visibility: visible;
+    width: 100%;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 11vh;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 220px;
+    height: 7vh;
+  }
+  li {
+    list-style-type: none;
+    font-size: 2rem;
+    @include underline-lr;
+  }
+
+  img {
+    cursor: pointer;
+    transition: 1s ease all;
+    height: 60px;
+    &:hover {
+      transform: translate(-3px, 3px);
+    }
+  }
+}
+
+.navbar-w {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 11vh;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 220px;
+    height: 7vh;
+  }
+  li {
+    list-style-type: none;
+    font-size: 2rem;
+    @include underline-lr;
+    &::after {
+      background-color: black;
+    }
+  }
+
+  img {
+    cursor: pointer;
+    transition: 1s ease all;
+    &:hover {
+      transform: translate(-3px, 3px);
+    }
+  }
+}
+
+.bubble-wrapper {
+  width: 100px;
+  height: 150px;
+  position: relative;
+  margin-top: 170px;
+
+  & > div {
+    background-color: rgb(120, 120, 120);
+    position: absolute;
+    border-radius: 50px;
+  }
+
+  @keyframes bubbleOne {
+    0% {
+      bottom: 0;
+      left: 15px;
+      opacity: 0;
+    }
+    50% {
+      bottom: 50%;
+      left: 30%;
+      opacity: 1;
+    }
+    100% {
+      bottom: 100%;
+      left: 80%;
+      opacity: 0;
+    }
+  }
+
+  .bubble-1 {
+    width: 10px;
+    height: 10px;
+    bottom: 0;
+    left: 15px;
+    animation: bubbleOne 4s linear infinite;
+  }
+
+  @keyframes bubbleTwo {
+    0% {
+      bottom: 10px;
+      left: 25px;
+      opacity: 0;
+    }
+    50% {
+      bottom: 40%;
+      left: 60%;
+      opacity: 1;
+    }
+    100% {
+      bottom: 90%;
+      left: 90%;
+      opacity: 0;
+    }
+  }
+
+  .bubble-2 {
+    width: 12px;
+    height: 12px;
+    bottom: 10px;
+    left: 25px;
+    animation: bubbleTwo 2s linear infinite;
+  }
+
+  @keyframes bubbleThree {
+    0% {
+      bottom: 30px;
+      left: 5px;
+      opacity: 0;
+    }
+    50% {
+      bottom: 30%;
+      left: 50%;
+      opacity: 1;
+    }
+    100% {
+      bottom: 100%;
+      left: 90%;
+      opacity: 0;
+    }
+  }
+
+  .bubble-3 {
+    width: 8px;
+    height: 8px;
+    bottom: 30px;
+    left: 5px;
+    animation: bubbleThree 3.5s linear infinite;
+  }
+
+  @keyframes bubbleFour {
+    0% {
+      bottom: 40px;
+      left: 35px;
+      opacity: 0;
+    }
+    50% {
+      bottom: 60%;
+      left: 60%;
+      opacity: 1;
+    }
+    100% {
+      bottom: 100%;
+      left: 80%;
+      opacity: 0;
+    }
+  }
+
+  .bubble-4 {
+    width: 8px;
+    height: 8px;
+    bottom: 40px;
+    left: 35px;
+    animation: bubbleFour 2s linear infinite;
+  }
+
+  @keyframes bubbleFive {
+    0% {
+      bottom: 45px;
+      left: 40px;
+      opacity: 0;
+    }
+    50% {
+      bottom: 40%;
+      left: 40%;
+      opacity: 1;
+    }
+    100% {
+      bottom: 100%;
+      left: 90%;
+      opacity: 0;
+    }
+  }
+
+  .bubble-5 {
+    width: 12px;
+    height: 12px;
+    bottom: 45px;
+    left: 40px;
+    animation: bubbleFive 3s linear infinite;
+  }
+
+  @keyframes bubbleSix {
+    0% {
+      bottom: 50px;
+      left: 60px;
+      opacity: 0;
+    }
+    50% {
+      bottom: 50%;
+      left: 60%;
+      opacity: 1;
+    }
+    100% {
+      bottom: 80%;
+      left: 50%;
+      opacity: 0;
+    }
+  }
+
+  .bubble-6 {
+    width: 15px;
+    height: 15px;
+    bottom: 50px;
+    left: 60px;
+    animation: bubbleSix 4s linear infinite;
+  }
+
+  @keyframes bubbleSeven {
+    0% {
+      bottom: 70px;
+      left: 70px;
+      opacity: 0;
+    }
+    50% {
+      bottom: 30%;
+      left: 40%;
+      opacity: 1;
+    }
+    100% {
+      bottom: 90%;
+      left: 60%;
+      opacity: 0;
+    }
+  }
+
+  .bubble-7 {
+    width: 15px;
+    height: 15px;
+    bottom: 70px;
+    left: 70px;
+    animation: bubbleSeven 2s linear infinite;
+  }
+
+  @keyframes bubbleEight {
+    0% {
+      bottom: 30px;
+      left: 60px;
+      opacity: 0;
+    }
+    50% {
+      bottom: 60%;
+      left: 60%;
+      opacity: 1;
+    }
+    100% {
+      bottom: 100%;
+      left: 98%;
+      opacity: 0;
+    }
+  }
+
+  .bubble-8 {
+    width: 8px;
+    height: 8px;
+    bottom: 30px;
+    left: 60px;
+    animation: bubbleEight 3.5s linear infinite;
+  }
+
+  @keyframes bubbleNine {
+    0% {
+      bottom: 30px;
+      left: 30px;
+      opacity: 0;
+    }
+    50% {
+      bottom: 45%;
+      left: 50%;
+      opacity: 1;
+    }
+    100% {
+      bottom: 90%;
+      left: 100%;
+      opacity: 0;
+    }
+  }
+
+  .bubble-9 {
+    width: 5px;
+    height: 5px;
+    bottom: 30px;
+    left: 30px;
+    animation: bubbleNine 4s linear infinite;
+  }
+
+  @keyframes bubbleTen {
+    0% {
+      bottom: 50px;
+      left: 30px;
+      opacity: 0;
+    }
+    50% {
+      bottom: 50%;
+      left: 40%;
+      opacity: 1;
+    }
+    100% {
+      bottom: 100%;
+      left: 80%;
+      opacity: 0;
+    }
+  }
+  .bubble-10 {
+    width: 8px;
+    height: 8px;
+    bottom: 50px;
+    left: 30px;
+    animation: bubbleTen 3s linear infinite;
+  }
+}
+
+@import "home";
+
+@import "share";
+
+@import "stories";
+
+@import "eachstories";
+
+@media screen and (max-width: 630px) {
+  .navbar {
+    ul {
+      width: 180px;
+    }
+    li {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar {
+    ul {
+      width: 160px;
+    }
+    li {
+      font-size: 1.5rem;
+    }
+  }
+}
