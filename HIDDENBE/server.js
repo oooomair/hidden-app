@@ -105,6 +105,6 @@ app.patch('/:id', asyncHandler(async (req, res) => {
     res.end()
 }))
 
-app.listen(8000, () => {
+app.listen(process.env.PORT || 8000, () => {
     console.log('server running on port 8000');
 })

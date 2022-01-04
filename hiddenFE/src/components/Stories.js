@@ -10,7 +10,7 @@ const Stories = () => {
     const [search, setSearch] = useState('')
     const [{ themeBody, themeInput, isDark }, toggleTheme] = useContext(ThemeContext);
     
-    const {data: stories, isPending, error} = useFetch(`http://localhost:8000/search/${search}`)
+    const {data: stories, isPending, error} = useFetch(`/search/${search}`)
 
     const changeSearch = (searchValue) => {
         setSearch(searchValue)

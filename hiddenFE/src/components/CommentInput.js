@@ -30,7 +30,7 @@ const CommentInput = () => {
        const newCommentObject = {newComment}
        console.log(newCommentObject);
 
-        fetch(`http://localhost:8000/${id}`, {
+        fetch(`/${id}`, {
             method: 'PATCH',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newCommentObject)

@@ -59,7 +59,7 @@ const ShareMain = () => {
         
         const newStory = { title, story, comments, isComments };
 
-        fetch('http://localhost:8000/', {
+        fetch('/', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newStory)

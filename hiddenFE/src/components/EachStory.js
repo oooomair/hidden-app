@@ -8,7 +8,7 @@ const EachStory = () => {
 
     const {id} = useParams();
 
-    const {data, isPending, error} = useFetch(`http://localhost:8000/${id}`)
+    const {data, isPending, error} = useFetch(`/${id}`)
 
     return (
         <div className="each-story">
