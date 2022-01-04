@@ -1,0 +1,140 @@
+.stories {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 800px;
+  padding-bottom: 80px;
+}
+
+.stories__main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 40px;
+  h1 {
+    font-size: 5.5rem;
+    margin-bottom: 25px;
+  }
+  input {
+    width: 100%;
+    background: rgb(50, 50, 50);
+    border: none;
+    height: 45px;
+    border-radius: 10px;
+    padding: 0 10px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    border: 1px solid rgb(50, 50, 50);
+    &:focus {
+      border: 1px solid aliceblue;
+    }
+  }
+}
+
+.stories__story {
+  cursor: pointer;
+  margin: 20px 0;
+  width: 100%;
+  &:hover h2 {
+    &::after {
+      visibility: visible;
+      width: 100%;
+    }
+  }
+  h2 {
+    margin-bottom: 3px;
+    font-size: 2.2rem;
+    width: max-content;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #548cff;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  p {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .stories {
+    width: 600px;
+  }
+  .stories__main {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .stories {
+    width: 470px;
+  }
+  .stories__main {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .stories {
+    width: 400px;
+  }
+  .stories__main {
+    h1 {
+      font-size: 4.5rem;
+    }
+  }
+  .stories__story {
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .stories {
+    width: 350px;
+  }
+  .stories__main {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+  .stories__story {
+    h2 {
+      font-size: 1.9rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .stories {
+    width: 300px;
+  }
+  .stories__main {
+    h1 {
+      font-size: 3.7rem;
+    }
+  }
+  .stories__story {
+    h2 {
+      font-size: 1.7rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
