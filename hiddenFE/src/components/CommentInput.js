@@ -9,7 +9,7 @@ const CommentInput = () => {
 
   const {id} = useParams();
 
-  const {data: story, isPending, error, fetchData} = useFetch(`http://localhost:8000/${id}`)
+  const {data: story, isPending, error, fetchData} = useFetch(`https://hidden-app.up.railway.app/${id}`)
   
     const [disabled, setDisabled] = useState(true)
     const [newComment, setNewComment] = useState('')
