@@ -12,10 +12,10 @@ const ShareNavbar = () => {
     return (
         <div className="navbar">
                 <ul>
-                    <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>
+                    <Link style={{ textDecoration: 'none', color: themeBody.color }} to='/'>
                         <li>Home</li>
                     </Link>
-                    <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/stories'>
+                    <Link style={{ textDecoration: 'none', color: themeBody.color }} to='/stories'>
                         <li>Stories</li>
                     </Link>
                 </ul>

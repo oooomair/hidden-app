@@ -8,15 +8,15 @@ import moon from '../assets/moon.svg'
 
 const StoriesNavbar = () => {
 
-  const [{ theme, themeInput, isDark }, toggleTheme] = useContext(ThemeContext);
+  const [{ themeBody, themeInput, isDark }, toggleTheme] = useContext(ThemeContext);
 
     return (
             <div className="navbar">
                 <ul>
-                    <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>
+                    <Link style={{ textDecoration: 'none', color: themeBody.color }} to='/'>
                         <li>Home</li>
                     </Link>
-                    <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/share'>
+                    <Link style={{ textDecoration: 'none', color: themeBody.color }} to='/share'>
                         <li>Share</li>
                     </Link>
                 </ul>

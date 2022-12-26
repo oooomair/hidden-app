@@ -40,12 +40,12 @@ const Home = () => {
             </div>
             <div className="home__main">
                 <h2>
-                <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/share'>
+                <Link style={{ textDecoration: 'none', color: themeBody.color  }} to='/share'>
                     <span id='home__share'>share</span>
                 </Link>
                 your</h2>
                 <h1>
-                <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/stories'>
+                <Link style={{ textDecoration: 'none', color: themeBody.color }} to='/stories'>
                     <span id='home__stories'>Stories</span>
                     </Link>
                 </h1>
