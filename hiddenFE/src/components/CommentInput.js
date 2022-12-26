@@ -30,7 +30,7 @@ const CommentInput = () => {
        const newCommentObject = {newComment}
        console.log(newCommentObject);
 
-        fetch(`/${id}`, {
+        fetch(`https://hidden-app.up.railway.app/${id}`, {
             method: 'PATCH',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newCommentObject)
