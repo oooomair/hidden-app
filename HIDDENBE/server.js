@@ -90,8 +90,6 @@ app.post('/', asyncHandler(async (req, res) => {
 app.patch('/:id', asyncHandler(async (req, res) => {
 
     const { newComment }  = req.body
-
-    console.log(newComment);
   
     await Story.updateOne(
         { _id: req.params.id }, 

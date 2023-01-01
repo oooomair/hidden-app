@@ -1,9 +1,21 @@
-import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import CommentInput from './CommentInput'
 import Comments from './Comments'
 
 const EachStoryMain = ({story}) => {
+
+  const [comments, setComments] = useState()
+
+  const onComment = comment => {
+    setComments(prevComments => [...prevComments, comment]);
+    console.log(comment);
+  }
+
+  useEffect(() => {
+    if (story) {
+      setComments(story.comments);
+    }
+  }, [story]);
 
     return (
         <div className="each-story__main">
@@ -11,10 +23,10 @@ const EachStoryMain = ({story}) => {
         <p>{story.story}</p>
         {story.isComments ?
         <div className="comments">
-        <CommentInput/>
+        <CommentInput onComment={onComment}/>
         <h2>Comments </h2>
         <ul className='comment-list'>
-             { story.comments.map(comment => {
+             {comments && comments.map(comment => {
                return <Comments key={Math.floor(Math.random()*100000)} comment={comment} /> 
              })}
         </ul>
