@@ -11,9 +11,7 @@ app.use(cors())
 
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://omair:test123@cluster0.12n48.mongodb.net/hiddendb?retryWrites=true&w=majority', () => {
-    console.log('connected to database');
-}) 
+mongoose.connect('mongodb+srv://omair:test123@cluster0.12n48.mongodb.net/hiddendb?retryWrites=true&w=majority') 
 
 const storySchema = new mongoose.Schema({
     title: {
